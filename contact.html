@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="CSS/stilimi.css">
+    <script src="style.js"></script>
+</head>
+<body>
+
+      <!--Ndertimi i navbar-->
+
+      <div id="brand"><img src="Imazhe/icon2.jpg" width="250px" height="250px"></div>
+      <nav>
+        <ul>
+         <li><a href="index.html" target="_blank">Home</a></li> 
+         <li><a href="about.html" target="_blank">About</a></li>
+         <li><a href="news.html" target="_blank">News</a></li>
+         <li><a href="movies.html" target="_blank">Movies</a></li>
+         <li><a href="characters.html" target="_blank">Characters</a></li>
+         <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+     </div>
+     <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+       <ul class="mobile-menu">
+         <li><a href="index.html" target="_blank">Home</a></li> 
+         <li><a href="about.html" target="_blank">About</a></li>
+         <li><a href="news.html" target="_blank">News</a></li>
+         <li><a href="movies.html" target="_blank">Movies</a></li>
+         <li><a href="characters.html" target="_blank">Characters</a></li>
+         <li><a href="contact.html" target="_blank">Contact</a></li>
+       </ul>
+     </div>
+ <!--Fund navbar-->
+
+
+  <!--Forms-->
+    <div class="flex items-center min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto">
+          <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+            <div class="text-center">
+              <h1 class="hl">
+                If you are a fans of Marvel, leave your comment to make a better experience for u and us :) 
+              </h1>
+            
+            </div>
+            <div class="m-7">
+              <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                <input type="checkbox" name="botcheck" id="" style="display: none;" />
+      
+                <div class="mb-6">
+                  <label for="name" class=" mb-4 ">Enter Your Name</label>
+                  <input type="text" name="name" id="name"  required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                </div>
+                <div class="mb-6">
+                  <label for="name" class=" mb-4 ">Enter your favourite movies</label>
+                  <input type="text" name="name" id="name"  required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                </div>
+                <div class="mb-6">
+                  <label for="name" class=" mb-4 ">Enter your favourite character</label>
+                  <input type="text" name="name" id="name"  required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                </div>
+                <div class="mb-6">
+                  <label for="message" class="mb-7"></label>
+      
+                  <textarea rows="5" name="message" id="message" placeholder="Leave your message" ></textarea>
+                  <button type="submit" class="w-full">
+                    Send Message
+                  </button>
+                </div>
+                <p class="text-base text-center text-gray-400" id="result"></p>
+              </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <!--Footer-->
+<footer class="footer">
+  
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/Marvel/" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/marvel" target="_blank">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://marvelentertainment.tumblr.com/" target="_blank">
+          <ion-icon name="logo-tumblr"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/marvel/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/corporate/interns" target="_blank">Intership</a></li>
+      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" target="_blank">Marvel Unlimited</a></li>
+  
+  
+    </ul>
+    <p>©2023 MARVEL</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!--Fund footer-->
+</body>
+</html>
