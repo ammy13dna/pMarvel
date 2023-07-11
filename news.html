@@ -5,237 +5,392 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/owl.carousel.min.css">
-    <link rel="stylesheet" href="CSS/owl.theme.default.min.css">
-    <link rel="stylesheet" href="CSS/stilimi.css">
-    <script src="style.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+     </style>
 </head>
 <body>
        <!--Ndertimi i navbar-->
 
-       <div id="brand"><img src="Imazhe/icon2.jpg" width="250px" height="250px"></div>
-       <nav>
-         <ul>
-          <li><a href="index.html" target="_blank">Home</a></li> 
-          <li><a href="about.html" target="_blank">About</a></li>
-          <li><a href="news.html" target="_blank">News</a></li>
-          <li><a href="movies.html" target="_blank">Movies</a></li>
-          <li><a href="characters.html" target="_blank">Characters</a></li>
-          <li><a href="contact.html" target="_blank">Contact</a></li>
-         </ul>
-       </nav>
-       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-        <ul class="mobile-menu">
-          <li><a href="index.html" target="_blank">Home</a></li> 
-          <li><a href="about.html" target="_blank">About</a></li>
-          <li><a href="news.html" target="_blank">News</a></li>
-          <li><a href="movies.html" target="_blank">Movies</a></li>
-          <li><a href="characters.html" target="_blank">Characters</a></li>
-          <li><a href="contact.html" target="_blank">Contact</a></li>
-        </ul>
-      </div>
-  <!--Fund navbar-->
+       <nav class="bg-black shadow-lg">
+        <div class="max-w-6xl mx-auto px-4"></div>
+          <div class="flex justify-between">
+            <div class="flex space-x-7">
+              <!-- Website Logo -->
+              <div>
+                <a href="#" class="flex items-center py-4 px-2">
+                  <img src="Imazhe/icon2.jpg" alt="Logo" class="h-20 w-40 mr-2" />
+                 
+                </a>
+              </div>
+              <!-- Primary Navbar items -->
+              <div class="hidden md:flex items-center space-x-10">
+                <a href="index.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Home</a>
+                  
+                <a href="about.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
+    
+                <a href="news.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">News</a>
+    
+                <a href="movies.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-redn-500 transition duration-300">Movies</a>
+                <a href="characters.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Characters</a>
+                  <a href="contact.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300" >Contact Us</a>
+              </div>
+              </div>
+          </div>
+        </div>
+           
+    
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+              <button class="outline-none mobile-menu-button">
+              <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                x-show="!showMenu"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+            </div>
+          </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu">
+          <ul class="">
+            <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+            <li class="active"><a href="about.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">About</a></li>
+            <li class="active"><a href="news.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">News</a></li>
+            <li class="active"><a href="movies.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Movies</a></li>
+            <li class="active"><a href="characters.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Characters</a></li>
+            <li class="active"><a href="contact.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Contact Us</a></li>
+          </ul>
+        
+        </div>
+        <script>
+          const btn = document.querySelector("button.mobile-menu-button");
+          const menu = document.querySelector(".mobile-menu");
+  
+          btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+          });
+        </script>
+      </nav>
+    
+ <!--Fund navbar-->
 <!--News-->
-<h3 class="hl">LATEST MOVIES NEWS</h3>
-<div class="group">
- <div class="text" ><a class="mv" href="https://www.marvel.com/articles/movies/angela-bassett-wins-golden-globe-for-black-panther-wakanda-forever"><h5 > Angela Bassett wins Golden Globe for ‘Black Panther: Wakanda Forever’</h5></a></div>
-  <div class="images">
-  <img  src="Imazhe/wakanda.jpg" width="420px" height="400px"></div>
-</div>
-<div class="owl-carousel owl-theme">
-  <div class="item">
-  <img  src="Imazhe/maxresdefault.jpg" width="200px" height="200px" >
-  <p><a class="mv" href="https://www.marvel.com/articles/movies/stan-lee-cameos-marvel-cinematic-universe">Stan Lee’s Cameos in the Marvel Cinematic Universe</a></p>
-</div>
 
-<div class="item">
-  <img  src="Imazhe/SPIDER-MAN-INTO-THE-SPIDER-VERSE-trio.jpg" width="200px" height="200px"  >
- 
-<p ><a class="mv"  href="https://www.marvel.com/articles/movies/marvel-cinematic-universe-timeline-disney-plus">Watch Marvel Movies and Shows in Order on Disney+</a></p>
- </div>
-
-<div class="item">
-  <img  src="Imazhe/gotg_vol_3_fb_tw_yt.jpg" width="200px" height="200px"  >
- 
-<p><a class="mv"  href="https://www.marvel.com/articles/movies/guardians-of-the-galaxy-vol-3-trailer-ccxp22">'Guardians of the Galaxy Vol. 3' Trailer Debuts at CCXP22</a></p>
- </div>
-<div class="item">
-  <img  src="Imazhe/images.jpg" width="200px" height="200px"  >
- 
-<p><a class="mv" href="https://www.marvel.com/articles/movies/rihanna-music-video-black-panther-lift-me-up">Rihanna Releases New Music Video for ‘Black Panther’ Single “Lift Me Up”</a></p>
-</div>
-<div class="item">
-  <img  src="Imazhe/ir.jpg" width="200px" height="200px"  >
- 
-<p><a class="mv" href="https://www.marvel.com/articles/movies/iron-man-national-film-registry-of-the-library-of-congress">‘Iron Man’ Inducted into the National Film Registry of the Library of Congress</a></p>
-</div>
-</div> 
-<h3 class="hl">LATEST COMICS NEWS</h3>
-<div class="group">
-  <div class="textt"><a class="mv" href="https://www.marvel.com/articles/comics/star-wars-black-history-month-covers-2023-mateus-manhanini-sana-starros-mace-windu-finn">New Star Wars Black History Month Covers Celebrate Sana Starros, Mace Windu, Finn, and More</a></div>
-  <div class="images">
-  <img  src="Imazhe/StarWarsLando.jpg" width="500px" height="450px"></div>
-</div>
-<div class="owl-carousel owl-theme">
-  <div class="item">
-  <img  src="Imazhe/captain_america_cold_war_card.jpg"width="200px" height="200px"  >
-  <p><a class="mv" href="https://www.marvel.com/articles/comics/captain-america-cold-war-crossover-titles-april-steve-rogers-sam-wilson">Tensions Erupt Between Steve Rogers & Sam Wilson as 'Captain America: Cold War' Begins</a></p>
-  </div>
-
-  <div class="item">
-  <img  src="Imazhe/kang_card_image.jpg" width="200px" height="200px" >
- 
-<p ><a class="mv" href="https://www.marvel.com/articles/comics/kang-timeless-one-shot-predicts-the-future-of-the-marvel-universe">2023 Is the Year of Kang</a></p>
- 
-  </div>
-  <div class="item">
-  <img  src="Imazhe/mighty-7-debuts-as-part-of-stan-lee-comics-2q15utgc-x-large.jpg" width="200px" height="200px" >
- 
-<p ><a class="mv" href="https://www.marvel.com/articles/comics/stan-lee-wildest-works-list">Stan Lee's Wildest Works</a></p>
- 
-  </div>
-  <div class="item">
-  <img  src="Imazhe/marvel-unlimited-free-comic-offer-android-ios-coronavirus-offer.jpg" width="200px" height="200px" >
- 
-<p><a class="mv" href="https://www.marvel.com/articles/comics/new-on-marvel-unlimited-january-2023">What’s Coming to Marvel Unlimited This January</a></p>
- 
-  </div>
-  <div class="item">
-  <img  src="Imazhe/historical-marvel-tales-alan-gratz-article-card.jpg" width="200px" height="200px"  >
- 
-<p><a class="mv" href="https://www.marvel.com/articles/comics/a-look-back-on-historical-marvel-tales-with-alan-gratz">A Look Back on Historical Marvel Tales with Alan Gratz</a></p>
-  </div>
-  <div class="item">
-  <img  src="Imazhe/voices_crd-1560x876_01_7.jpg" width="200px" height="200px"  >
- 
-<p ><a class="mv" href="https://www.marvel.com/articles/comics/marvels-voices-how-peach-momoko-unlocks-new-worlds-for-marvel-readers">'Marvel's Voices': How Peach Momoko Unlocks New Worlds for Marvel Readers</a></p>
-</div>
-</div>
+<body class=" font-sans leading-normal bg-gray-200 tracking-normal">
 
 
+  <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('https://cdn.europosters.eu/image/hp/47626.jpg');  height: 70vh; max-height:480px;">
+			
+		</div>
+		
+		<!--Container-->
+		<div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
+			
+				<div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
+					
+				<!--Lead Card-->
+				<div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
+					<a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
+						<div class="w-full md:w-2/3 rounded-t">	
+							<img src="https://media.vanityfair.com/photos/5a1c7f8c7eee1d789d984783/4:3/w_1776,h_1332,c_limit/marvel-iron-man-lede.jpg" class="h-full w-full shadow">
+						</div>
+
+						<div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
+							<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+								<p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">MOVIES</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6"><br>Kevin Feige and Jon Favreau Reflect on Casting Robert Downey Jr. in 'Iron Man'</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									<br>“That’s probably one of the greatest decisions in the history of Hollywood.”</p>
+							</div>
+
+							<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+								<div class="flex items-center justify-between">
+				
+									<p class="text-gray-600 text-xs md:text-sm">Published May 24, 2023</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+				</div>
+				<!--/Lead Card-->
 
 
-<h1 class="hl">NEW ON MARVEL UNLIMITED</h1>
-<h3 class="sh">Read these plus 30,000+ digital comics for $9.99 a month!</h3>
-<div class="owl-carousel owl-theme">
+				<!--Posts Container-->
+				<div class="flex flex-wrap justify-between pt-12 -mx-6">
+
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://cdn.marvel.com/content/1x/studios_logos.jpg" class="h-64 w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Movies<br></p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Marvel Studios Announces Updates to Theatrical Release Schedule</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									<br>'CAPTAIN AMERICA: BRAVE NEW WORLD', 'THUNDERBOLTS', 'BLADE', 'UNTITLED DEADPOOL MOVIE', 'FANTASTIC FOUR', 'AVENGERS: THE KANG DYNASTY', 'AVENGERS: SECRET WARS' all receive new release dates
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								
+								<p class="text-gray-600 text-xs md:text-sm">Published June 13, 2023</p>
+							</div>
+						</div>
+					</div>
+				
+					
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://cdn.marvel.com/content/1x/capbnw_setphoto.jpg" class="h-64 w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Movies<br></p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">'Captain America: Brave New World': Anthony Mackie Shares Photo From Set<br></div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									<br>Sam Wilson is taking flight as Captain America once again in the upcoming Marvel Studios film which has now received a new title — Captain America: Brave New World. 
+								</p>
+							</a>
+							</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+					
+								<p class="text-gray-600 text-xs md:text-sm">Published June 5, 2023</p>
+							</div>
+						</div>
+					</div>
+
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://cdn.marvel.com/content/1x/spidey_14.png" class="h-64 w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Marvel Comics<br></p>
+								<div class="w-full  font-bold text-xl text-gray-900 px-6">‘Spider-Man: Across the Spider-Verse’: The Directors on Miles and Gwen’s Importance</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									<br>Miles Morales is swinging into theaters again with Spider-Man: Across the Spider-Verse, and he’s not alone. He’s once again joined
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+					
+								<p class="text-gray-600 text-xs md:text-sm">Published June 2, 2023</p>
+							</div>
+						</div>
+					</div>
 
 
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-     
-      <img src="Imazhe/clean.jpg" width="300px" height="500px">
-    </div>
-    <div class="flip-card-back">
-      <h3>Wakanda (2022) #1</h3>
-      <p>Published: October 12, 2022</p>
-      <p>The Black Panther is no longer welcome in Wakanda! Who is this proud nation without its king? This exciting new miniseries answers that question as each issue spotlights a different fan-favorite Wakandan character.</p>
-    </div>
-  </div>
-</div>
+					<!--1/2 col -->
+					<div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://s.yimg.com/ny/api/res/1.2/j9U1o73XtQGVf0krXTq40A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/en/total_film_411/1d7a0cdf5f785895a252627550ca3b0b" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Movies<br></p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Zoe Saldaña on Gamora’s New ‘Spunk’ in ‘Guardians of the Galaxy Vol. 3’<br></div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									“I do find this Gamora very exciting because she’s very independent and she’s wild and she’s different." 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								
+								<p class="text-gray-600 text-xs md:text-sm">Published May 12, 2023</p>
+							</div>
+						</div>
+					</div>
 
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-
-      <img src="Imazhe/namor.jpg" width="300px" height="500px">
-    </div>
-    <div class="flip-card-back">
-      <h3>Namor: Conquered Shores (2022) #1</h3>
-      <p>Published: October 12, 2022</p>
-      <p>A century into the future, not much land remains on Earth. A combination of a worsening climate and a devastating war with the Kree has left the surface of the planet mostly inhospitable.</p>
-    </div>
-
-</div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-
-      <img src="Imazhe/eternal.jpg" width="300px" height="500px">
-    </div>
-    <div class="flip-card-back">
-      <h3> A.X.E.: Eternals (2022) #1</h3>
-      <p>Published: October 12, 2022</p>
-      <p>The third & final story-critical A.X.E one-shot!</p>
-    </div>
-</div>
-
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-
-      <img src="Imazhe/daredevil.jpg" width="300px" height="500px">
-    </div>
-    <div class="flip-card-back">
-      <h3> Daredevil (2022) #4</h3>
-      <p>Published: October 12, 2022</p>
-      <p>For months, Elektra Natchios has been developing a plan to save the world from the violent and ruthless HAND by rebuilding its opposite equal – the FIST.</p>
-    </div>
-</div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-
-      <img src="Imazhe/alloutofav.jpg" width="300px" height="500px">
-    </div>
-    <div class="flip-card-back">
-      <h3> All-Out Avengers (2022) #2</h3>
-      <p>Published: October 12, 2022</p>
-      <p>The Avengers are on their knees, in chains and at the mercy of Doctor Doom. Their only hope lies in the one man with the strength.</p>
-    </div>
-</div>
-
-</div>
-</div>
-<button class="button"><a class="mo" href="https://www.marvel.com/unlimited?cid=dcom_promomodule_20210909_unlimited_home"><span>Get the Marvel Unlimited</span></a></button>
+					<!--1/2 col -->
+					<div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">	
+								<img src="https://cdn.marvel.com/content/1x/amwqm.jpg" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Marvel Comic</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">'Ant-Man and The Wasp: Quantumania' Arrives on Blu-ray</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Unlock hours of bonus content, along with a new printable disc cover.
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+							
+								<p class="text-gray-600 text-xs md:text-sm">Published May 26, 2023</p>
+							</div>
+						</div>
+					</div>
 
 
 
+					<!--2/3 col -->
+					<div class="w-full md:w-2/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">	
+								<img src="https://cdn.marvel.com/content/1x/captain_marvel_50_interior_artwork.jpg" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Marvel Comic <br></p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Kelly Thompson Reflects on Her 'Captain Marvel' Journey</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+								<br>	In honor of the 50th issue, longtime 'Captain Marvel' writer Kelly Thompson broke down the final chapter of her Carol Danvers story and the highlights of her run at large.
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								
+								<p class="text-gray-600 text-xs md:text-sm">Published June 15, 2023</p>
+							</div>
+						</div>
+					</div>
+
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://cdn.marvel.com/content/1x/brooklyn.png" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Movies</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">‘Guardians of the Galaxy Vol. 3’: Creating the ‘No Sleep Till Brooklyn’ Fight Scene<br></div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									No sleep till the Guardians of the Galaxy save the galaxy…again.
+
+In Marvel Studios’ Guardians of the Galaxy Vol. 3, the band of misfits must fight to save one of their own and in the process, you know, defend the galaxy. This all culminates in an epic showdown between the Guardians and their latest adversary, The High Evolutionary
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+						
+								<p class="text-gray-600 text-xs md:text-sm">Published May 19, 2023</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				</div>
+
+			
+		</div>
+			
 
 
-  
+
+
+
+
+
+
+
+
   <!--Footer-->
-<footer class="footer">
-   
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/Marvel/" target="_blank">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/marvel" target="_blank">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://marvelentertainment.tumblr.com/" target="_blank">
-          <ion-icon name="logo-tumblr"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/marvel/" target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/corporate/interns" target="_blank">Intership</a></li>
-      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" target="_blank">Marvel Unlimited</a></li>
+  <footer class="bg-black">
+	<div class="flex justify-center items-center ">
+	  <div class="mt-6 lg:mb-0 mb-6 ">
+	 <footer class="w-full   pb-12 ">
+	  <div
+		  class="relative w-full flex items-center invisible md:visible md:pb-12"
+		  x-data="getCarouselData() "
+	  >
+	  <div class="flex justify-center items-center space-x-10">
   
+	  <a href="https://www.facebook.com/Marvel/" role="button">
+		  <!-- Facebook -->
+		  <svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="h-7 w-7 space-x-10"
+			fill="currentColor"
+			style="color: #1877f2"
+			viewBox="0 0 24 24">
+			<path
+			  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+		  </svg>
+		</a>
+		
+		  <a href="https://www.instagram.com/marvel/" role="button">
+			  <!-- Instagram -->
+			  <svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-7 w-7"
+				fill="currentColor"
+				style="color: #c13584"
+				viewBox="0 0 24 24">
+				<path
+				  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+			  </svg>
+			</a>
+			
+			<a href="https://twitter.com/Marvel" role="button">
+				  <!-- Twitter -->
+				  <svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-7 w-7"
+					fill="currentColor"
+					style="color: #1da1f2"
+					viewBox="0 0 24 24">
+					<path
+					  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+				  </svg>
+				</a>
+				<!-- Pinterest -->
+				<a href="https://www.pinterest.com/marvelofficial/" role="button">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="h-7 w-7"
+  fill="currentColor"
+  style="color: #e60023"
+  viewBox="0 0 24 24">
+  <path
+	d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+	fill-rule="evenodd"
+	clip-rule="evenodd" />
+  </svg>
+  </div>
+  </div> 
+	 </div> 
+	 </div>
+	  <div class="w-full mx-auto text-white flex flex-col items-center">
+		  <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+			  <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="uppercase px-3">Marvel Unlimited</a>
+			  <a href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/" class="uppercase px-3">Privacy Policy</a>
+			  <a href="https://disneytermsofuse.com/english-united-kingdom/" class="uppercase px-3">Terms & Conditions</a>
+			  <a href="https://www.marvel.com/corporate/license_tou" class="uppercase px-3">License Agreement</a>
+		  </div>
+		  <div class="uppercase pb-6"> ©2023 MARVEL</div>
+	  </div>
+  </footer></body>
   
-    </ul>
-    <p>©2023 MARVEL</p>
-  </footer>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="js/jquery.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/style.js"></script>
-  <!--Fund footer-->
-</body>
-</html>
+   <!--Fund footer-->
+   <script>
+	  function getCarouselData() {
+		  return {
+			  currentIndex: 0,
+			  images: [
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=1',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+				  'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+			  ],
+			  increment() {
+				  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+			  },
+			  decrement() {
+				  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+			  },
+		  }
+	  }
+  </script>
+  </body>
+  </html>

@@ -2,141 +2,303 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/stilimi.css">
- 
+    <meta name="author" content="David Grzyb">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+    </style>
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
-<body> 
-      <!--Ndertimi i navbar-->
+<body class="bg-white font-family-karla">
 
-      <div id="brand"><img src="Imazhe/icon2.jpg" width="250px" height="250px"></div>
-      <nav>
-        <ul>
-         <li><a href="index.html" target="_blank">Home</a></li> 
-         <li><a href="about.html" target="_blank">About</a></li>
-         <li><a href="news.html" target="_blank">News</a></li>
-         <li><a href="movies.html" target="_blank">Movies</a></li>
-         <li><a href="characters.html" target="_blank">Characters</a></li>
-         <li><a href="contact.html" target="_blank">Contact</a></li>
-        </ul>
+       <!--Ndertimi i navbar-->
+
+       <nav class="bg-black shadow-lg">
+        <div class="max-w-6xl mx-auto px-4"></div>
+          <div class="flex justify-between">
+            <div class="flex space-x-7">
+              <!-- Website Logo -->
+              <div>
+                <a href="#" class="flex items-center py-4 px-2">
+                  <img src="Imazhe/icon2.jpg" alt="Logo" class="h-20 w-40 mr-2" />
+                 
+                </a>
+              </div>
+              <!-- Primary Navbar items -->
+              <div class="hidden md:flex items-center space-x-10">
+                <a href="index.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Home</a>
+                  
+                <a href="about.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
+    
+                <a href="news.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">News</a>
+    
+                <a href="movies.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-redn-500 transition duration-300">Movies</a>
+                <a href="characters.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Characters</a>
+                  <a href="contact.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300" >Contact Us</a>
+              </div>
+              </div>
+          </div>
+        </div>
+           
+    
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+              <button class="outline-none mobile-menu-button">
+              <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                x-show="!showMenu"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+            </div>
+          </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu">
+          <ul class="">
+            <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+            <li class="active"><a href="about.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">About</a></li>
+            <li class="active"><a href="news.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">News</a></li>
+            <li class="active"><a href="movies.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Movies</a></li>
+            <li class="active"><a href="characters.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Characters</a></li>
+            <li class="active"><a href="contact.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Contact Us</a></li>
+          </ul>
+        
+        </div>
+        <script>
+          const btn = document.querySelector("button.mobile-menu-button");
+          const menu = document.querySelector(".mobile-menu");
+  
+          btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+          });
+        </script>
       </nav>
-      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-       <div class="bar1"></div>
-       <div class="bar2"></div>
-       <div class="bar3"></div>
-     </div>
-     <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-       <div class="bar1"></div>
-       <div class="bar2"></div>
-       <div class="bar3"></div>
-       <ul class="mobile-menu">
-         <li><a href="index.html" target="_blank">Home</a></li> 
-         <li><a href="about.html" target="_blank">About</a></li>
-         <li><a href="news.html" target="_blank">News</a></li>
-         <li><a href="movies.html" target="_blank">Movies</a></li>
-         <li><a href="characters.html" target="_blank">Characters</a></li>
-         <li><a href="contact.html" target="_blank">Contact</a></li>
-       </ul>
-     </div>
- <!--Fund navbar-->
-<!--Ndertimi i about-->
-<div class="clearfix">
-<h1 class="hl">Corporate history</h1>
+    
+  <!--Fund navbar-->
+  
 
-<img class="img1" src="Imazhe/Marvel-Comics-Fun-Facts.jpg" width="400px" height="200px"  >
-<p class="pp">The precursor to Marvel Comics was founded in 1939 by pulp magazine publisher Martin Goodman. In order to capitalize on the growing popularity of comic books—especially those starring superheroes—Goodman created Timely Comics. Timely’s first comic book was Marvel Comics no. 1 (cover dated October 1939), which featured several superhero characters, most notably the Human Torch and the Sub-Mariner. Timely Comics introduced many superhero characters during comics’ “Golden Age” in the 1940s, most importantly Captain America, who first appeared in Captain America Comics no. 1 (March 1941). Timely characters were often portrayed as fighting against the Nazis and the Japanese even before the United States entered World War II. As the 1940s came to a close, superheroes fell out of vogue with comic book readers, and Timely canceled the last of its books in this genre in 1950.
-   In 1951 Goodman formed his own distribution company, and Timely Comics became Atlas Magazines. Though there was a brief experiment in bringing back superheroes such as Captain America in 1953, Atlas`s output was mostly in other genres such as humour, westerns, horror, war, and science fiction.<br>
- 
-<p class="pp">In 1956 rival company DC Comics ushered in the so-called Silver Age of comics by reintroducing superhero titles with significant commercial success. In the early 1960s Atlas changed its name to Marvel Comics. For several decades Marvel and DC were the top companies in the industry. Throughout the 1980s and ’90s Marvel changed hands numerous times, becoming a publicly held company in 1991. Questionable management decisions and a general slump in sales in the comic book industry drove Marvel Comics into bankruptcy in 1996. The company emerged from bankruptcy in 1998 and began to diversify its output, launching imprints aimed at a variety of demographics and expanding its cinematic offerings under the Marvel Studios banner. In 2007 Marvel began publishing digital comics. In 2009 the Walt Disney Company purchased the parent company of Marvel Comics.</p>
-</div>
-<div class="clearfix">
-<h1 class="hl">The Marvel Universe</h1>
-<div class="cardd" style="width: 18rem;">
-  <img src="Imazhe/Stan_Lee.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <p class="card-text">Stan Lee</p>
-  </div>
-</div>
-<p class="vn">The shared storytelling palette known as the Marvel universe was unveiled in 1961, when Goodman responded to the growing interest in superhero books by commissioning writer Stan Lee and artist Jack Kirby to create the Fantastic Four. With the release of Fantastic Four no. 1 (November 1961), readers were introduced to a superheroic setting that was, nevertheless, rooted in the real world. Lee and Kirby attempted to make their comic book characters more original by allowing them to interact with each other in a realistic fashion, including heroes often fighting or arguing with each other. This trend continued with a flood of other superhero characters introduced by Marvel Comics during the early 1960s, including Spider-Man, the Incredible Hulk, and the X-Men. Lee wrote the majority of Marvel’s books during that time, and Jack Kirby and Steve Ditko were the most important and influential artists.</p>
-<p class="vn">This more realistic approach to characterizations built up Marvel’s reputation and began to attract university-age readers. Stories also began to deal with social issues such as pollution, race relations, and drug abuse. A Spider-Man story arc from 1971 dealing with drug abuse had to be published without the approval of the Comic Code Authority—the self-regulatory body that had policed comic content since 1954—despite the fact that it was portraying drug use in a negative light. This caused the Comic Code Authority to revise its policy in such matters.</p>
-</div>
-<div class="clearfix">
-  <div class="card2" style="width: 18rem;">
-    <img class="img3" src="Imazhe/x-men.jpg" class="card-img-top" alt="..." width="250px" height="300px">
-    <div class="card-body">
-      <p class="card-text">X-Men</p>
+    <!-- Text Header -->
+    <header class="w-full bg-gray-200  mx-auto">
+        <div class="flex flex-col items-center py-12">
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+              Some Information About Marvel
+            </a>
+        </div>
+    </header>
+
+
+    <div class="container bg-gray-200  flex flex-wrap py-6">
+
+        <!-- Posts Section -->
+        <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+
+            <article class="flex flex-col shadow my-4">
+                <!-- Article Image -->
+                <a href="#" class="hover:opacity-75">
+                    <img src="https://assets.vogue.in/photos/5ce412593bf9b4495fb1a8be/16:9/w_1280,c_limit/Everything-you-need-to-know-before-watching-Marvel-movies-this-year.jpg">
+                </a>
+                <div class="bg-white flex flex-col justify-start p-6">
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Corporate History</a>
+                    <a href="#" class="pb-6">The precursor to Marvel Comics was founded in 1939 by pulp magazine publisher Martin Goodman. In order to capitalize on the growing popularity of comic books—especially those starring superheroes—Goodman created Timely Comics. Timely’s first comic book was Marvel Comics no. 1 (cover dated October 1939), which featured several superhero characters, most notably the Human Torch and the Sub-Mariner. Timely Comics introduced many superhero characters during comics’ “Golden Age” in the 1940s, most importantly Captain America, who first appeared in Captain America Comics no. 1 (March 1941)...</a>
+                    <a href="https://www.britannica.com/topic/Marvel-Comics" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="flex flex-col shadow my-4">
+                <!-- Article Image -->
+                <a href="#" class="hover:opacity-75">
+                    <img src="https://www.liveakhbar.in/wp-content/uploads/2022/09/Iron-Man-4-Release-Date.jpg">
+                </a>
+                <div class="bg-white flex flex-col justify-start p-6">
+                
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Iron Man. The First Marvel Movie</a>
+                    <p href="#" class="text-sm pb-3">
+                     <a class="font-semibold hover:text-gray-800">Played by Robert Downey</a>
+                    </p>
+                    <a href="#" class="pb-6">That brings us to Iron Man, the very first Marvel movie made, but the third in chronological order. Set in 2010, this origin movie started it all for the Marvel Cinematic Universe as Tony Stark creates the Iron Man suit to escape his captors and then become a powerful but arrogant superhero..</a>
+                    <a href="https://en.wikipedia.org/wiki/Iron_Man" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="flex flex-col shadow my-4">
+                <!-- Article Image -->
+                <a href="#" class="hover:opacity-75">
+                    <img src="https://www.turn-on.de/media/cms/2016/10/Avengers-Age-of-Ultron.jpg">
+                </a>
+                <div class="bg-white flex flex-col justify-start p-6">
+                    
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">The Avengers</a>
+                    
+                    <a href="#" class="pb-6">The team made its debut in The Avengers #1 (cover-dated September 1963). Labeled "Earth's Mightiest Heroes," the original Avengers consisted of Iron Man, Ant-..</a>
+                    <a href="https://en.wikipedia.org/wiki/Avengers_(comics)" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Pagination -->
+            <div class="flex items-center py-8">
+                <a href="#" class="h-10 w-10 bg-red-800 hover:bg-red-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
+                <a href="#" class="h-10 w-10 font-semibold text-gray-800 hover:bg-red-600 hover:text-white text-sm flex items-center justify-center">2</a>
+                <a href="#" class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">Next <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+
+        </section>
+
+        <!-- Sidebar Section -->
+        <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">Authot of Marvel. Stan Lee</p>
+                <p class="pb-2">Stan Lee was an American comic book writer, editor, publisher, and producer. He rose through the ranks of a family-run business called Timely Comics which...</p>
+                <a href="#" class="w-full bg-red-800 text-white font-bold text-sm uppercase rounded hover:bg-red-700 flex items-center justify-center px-2 py-3 mt-4">
+                    Learn More
+                </a>
+            </div>
+
+            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">Some Other Authors of Marvel and Marvel Comics</p>
+                <div class="grid grid-cols-3 gap-3">
+                    <img class="hover:opacity-75" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Stan_Lee_by_Gage_Skidmore_3.jpg" >
+                    <img class="hover:opacity-75" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/7.24.19BrianMichaelBendisByLuigiNovi1.jpg" >
+                    <img class="hover:opacity-75" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mark_Waid_by_Gage_Skidmore.jpg/170px-Mark_Waid_by_Gage_Skidmore.jpg" >
+                    <img class="hover:opacity-75" src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Daniel_way.JPG" >
+                    <img class="hover:opacity-75" src="https://pbs.twimg.com/media/FSLFGFcX0AAPr2j.jpg" >
+                    <img class="hover:opacity-75" src="https://static.dc.com/dc/files/default_images/Jim-Lee-1_Talent_v2_6266c9ffee6602.87633382.jpg?w=1200"> 
+                    <img class="hover:opacity-75" src="https://comicvine.gamespot.com/a/uploads/scale_small/7/72648/1496042-alewing1.jpg">
+                    <img class="hover:opacity-75" src="https://static.wikia.nocookie.net/buffy/images/8/8b/Adam_Hughes.jpg/revision/latest?cb=20200403145457" >
+                    <img class="hover:opacity-75" src="https://static.wikia.nocookie.net/criminalminds/images/f/fe/Adam_Glass.jpg/revision/latest/thumbnail/width/360/height/360?cb=20200329235527" >
+                </div>
+                <a href="https://www.thepopverse.com/marvel-comics-top-writers-artists-creators" class="w-full bg-red-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6" >
+                 Find More Artist
+                </a>
+            </div>
+
+        </aside>
+
     </div>
-  </div>
-<p class="vn">The late 1960s and early 1970s saw a new generation of creative talent emerge at Marvel. In 1967 Jim Steranko began to write and draw stories featuring secret agent Nick Fury in the anthology book Strange Tales. Steranko was influenced in his work by James Bond films and the psychedelic and Op art movements, and the resulting stories melded groundbreaking visuals with equally innovative storytelling techniques. Writer Chris Claremont and artist John Byrne began a long collaboration on The Uncanny X-Men in 1975. The pair revitalized the flagging series with characters such as Wolverine and complex story arcs that soon made the X-Men franchise one of Marvel’s best sellers.
-In 1985 Mark Gruenwald started a critically acclaimed 10-year run as the writer of Captain America. That same year he also began the miniseries Squadron Supreme (1985–86), a deconstructionist take on superheroes that preceded Alan Moore’s graphic novel Watchmen, published by DC Comics. The 1980s also saw Frank Miller’s stint on Daredevil, which took that book in a darker and grittier direction, reviving sagging sales and making it one of Marvel’s best sellers. In 1988 Todd MacFarlane began a popular run as artist on The Amazing Spider-Man. Four years later MacFarlane and a number of other popular artists, including Jim Lee, Erik Larsen, and Rob Liefeld, left Marvel to found rival Image Comics, a company that allowed creators to retain the copyrights of their characters.
-</div>
-<div class="clearfix">
-  <div class="card3" style="width: 18rem;">
-    <img class="img4" src="Imazhe/Avengers-Age-of-Ultron-Joss-Whedon.jpg" class="card-img-top" alt="..." width="280px" height="300px">
-    <div class="card-body">
-      <p class="card-text">Avengers</p>
-    </div>
-  </div>
-<p class="vn">During the 1990s and early 2000s a new wave of writers, including Brian Michael Bendis (Daredevil, The Avengers), Jonathan Hickman (Fantastic Four), and Ed Brubaker (Captain America), became well known for their mature and sometimes controversial takes on Marvel’s characters. The 2010s saw the emergence of another new wave of talent, with writer Matt Fraction and artist David Aja turning in a visually arresting run on Hawkeye, longtime Spider-Man writer Dan Slott teaming with artist Mike Allred for a bold take on a classic character in Silver Surfer, and writer G. Willow Wilson and artist Adrian Alphona breaking new ground with their critically acclaimed Ms. Marvel. In the 21st century Marvel’s profits were increasingly derived from toys, video games, and other merchandise featuring their most popular characters and from the production of a string of commercially successful movies. Those films differed from prior efforts to translate comics to the big screen in that they were set in a single shared world.</p>
-<p class="vn">That ambitious plan generated huge dividends with The Avengers (2012), a film that featured Iron Man, Thor, and Captain America—three heroes that had scored individual blockbuster successes—and grossed more than $1.5 billion worldwide. The Marvel Cinematic Universe, as it came to be known, grew into one of the most lucrative franchises in film history. Its success spawned a wave of television programs, beginning with Age on ABC and continuing with Daredevil, Jessica Jones, and Luke Cage , a string of critically lauded series that appeared on Netflix. In 2015 an agreement between Disney and Sony brought Spider-Man (who had previously appeared only in Sony-produced films) into the shared universe; the character would subsequently be available for use by both studios. Marvel Studios, the company’s film and television division, continued to set records with its flagship Avengers, but it also packed theatres with relatively unknown heroes such as the Guardians of the Galaxy (2014), Ant-Man (2015), and Doctor Strange (2016). In addition, Black Panther (2018) became the first Marvel movie to win an Academy Award; it received Oscars for costume design, original score, and production design. By 2020 more than 20 films had been released under the banner of the Marvel Cinematic Universe, global box office receipts had topped $22 billion.</p>
-</div>
-
-<a class="btn btn-danger" href="https://www.britannica.com/topic/Spider-Man-comic-book-character" role="button" target="_blank">Learn more about Marvel</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
   <!--Footer-->
-<footer class="footer">
-   
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/Marvel/" target="_blank">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/marvel" target="_blank">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://marvelentertainment.tumblr.com/" target="_blank">
-          <ion-icon name="logo-tumblr"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/marvel/" target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/corporate/interns" target="_blank">Intership</a></li>
-      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" target="_blank">Marvel Unlimited</a></li>
+  <footer class="bg-black">
+    <div class="flex justify-center items-center ">
+      <div class="mt-6 lg:mb-0 mb-6 ">
+     <footer class="w-full   pb-12 ">
+      <div
+          class="relative w-full flex items-center invisible md:visible md:pb-12"
+          x-data="getCarouselData() "
+      >
+      <div class="flex justify-center items-center space-x-10">
   
+      <a href="https://www.facebook.com/Marvel/" role="button">
+          <!-- Facebook -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7 space-x-10"
+            fill="currentColor"
+            style="color: #1877f2"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+          </svg>
+        </a>
+        
+          <a href="https://www.instagram.com/marvel/" role="button">
+              <!-- Instagram -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                fill="currentColor"
+                style="color: #c13584"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            
+            <a href="https://twitter.com/Marvel" role="button">
+                  <!-- Twitter -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-7 w-7"
+                    fill="currentColor"
+                    style="color: #1da1f2"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+                <!-- Pinterest -->
+                <a href="https://www.pinterest.com/marvelofficial/" role="button">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="h-7 w-7"
+  fill="currentColor"
+  style="color: #e60023"
+  viewBox="0 0 24 24">
+  <path
+    d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+    fill-rule="evenodd"
+    clip-rule="evenodd" />
+  </svg>
+  </div>
+  </div> 
+     </div> 
+     </div>
+      <div class="w-full mx-auto text-white bg-black flex flex-col items-center">
+          <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+              <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="uppercase px-3">Marvel Unlimited</a>
+              <a href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/" class="uppercase px-3">Privacy Policy</a>
+              <a href="https://disneytermsofuse.com/english-united-kingdom/" class="uppercase px-3">Terms & Conditions</a>
+              <a href="https://www.marvel.com/corporate/license_tou" class="uppercase px-3">License Agreement</a>
+          </div>
+          <div class="uppercase pb-6"> ©2023 MARVEL</div>
+      </div>
+  </footer></body>
   
-    </ul>
-    <p>©2023 MARVEL</p>
-  </footer>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <!--Fund footer-->
-  <script src="js/style.js"></script>
-</body>
-</html>
+   <!--Fund footer-->
+   <script>
+      function getCarouselData() {
+          return {
+              currentIndex: 0,
+              images: [
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=1',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+              ],
+              increment() {
+                  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+              },
+              decrement() {
+                  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+              },
+          }
+      }
+  </script>
+  </body>
+  </html>

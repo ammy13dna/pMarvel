@@ -5,428 +5,671 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/owl.carousel.min.css">
-    <link rel="stylesheet" href="CSS/owl.theme.default.min.css">
-    <link rel="stylesheet" href="CSS/stilimi.css">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   
     
 </head>
 <body>
-     <!--Ndertimi i navbar-->
+    <!--Ndertimi i navbar-->
 
-     <div id="brand"><img src="Imazhe/icon2.jpg" width="250px" height="250px"></div>
-     <nav>
-       <ul>
-        <li><a href="index.html" target="_blank">Home</a></li> 
-        <li><a href="about.html" target="_blank">About</a></li>
-        <li><a href="news.html" target="_blank">News</a></li>
-        <li><a href="movies.html" target="_blank">Movies</a></li>
-        <li><a href="characters.html" target="_blank">Characters</a></li>
-        <li><a href="contact.html" target="_blank">Contact</a></li>
-       </ul>
-     </nav>
-     <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-      <ul class="mobile-menu">
-        <li><a href="index.html" target="_blank">Home</a></li> 
-        <li><a href="about.html" target="_blank">About</a></li>
-        <li><a href="news.html" target="_blank">News</a></li>
-        <li><a href="movies.html" target="_blank">Movies</a></li>
-        <li><a href="characters.html" target="_blank">Characters</a></li>
-        <li><a href="contact.html" target="_blank">Contact</a></li>
-      </ul>
-    </div>
+    <nav class="bg-black shadow-lg">
+      <div class="max-w-6xl mx-auto px-4"></div>
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <!-- Website Logo -->
+            <div>
+              <a href="#" class="flex items-center py-4 px-2">
+                <img src="Imazhe/icon2.jpg" alt="Logo" class="h-20 w-40 mr-2" />
+               
+              </a>
+            </div>
+            <!-- Primary Navbar items -->
+            <div class="hidden md:flex items-center space-x-10">
+              <a href="index.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Home</a>
+                
+              <a href="about.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
+  
+              <a href="news.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">News</a>
+  
+              <a href="movies.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-redn-500 transition duration-300">Movies</a>
+              <a href="characters.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Characters</a>
+                <a href="contact.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300" >Contact Us</a>
+            </div>
+            </div>
+        </div>
+      </div>
+         
+  
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+            <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+              x-show="!showMenu"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div class="hidden mobile-menu">
+        <ul class="">
+          <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+          <li class="active"><a href="about.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">About</a></li>
+          <li class="active"><a href="news.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">News</a></li>
+          <li class="active"><a href="movies.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Movies</a></li>
+          <li class="active"><a href="characters.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Characters</a></li>
+          <li class="active"><a href="contact.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Contact Us</a></li>
+        </ul>
+      
+      </div>
+      <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      </script>
+    </nav>
+  
 <!--Fund navbar-->
-  <!--Filmat me te mire-->
+    
+
+<!--body-->
+<header class="w-full bg-gray-200  mx-auto">
+    <div class="flex flex-col items-center py-12">
+        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+         Marvel Movies
+        </a>
+    </div>
+</header>
+
+<!-- Avangers -->
+
+<div class="h-screen bg-gray-200 flex items-center justify-center">
+    
+    <div class="grid grid-cols-6 gap-3 px-16">
+        
+      <!-- Item 1 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://www.themoviedb.org/t/p/original/qMxAmzGQO722q0UlssCOPhrXmvX.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt0848228/" class="hover:text-red-500 text-black font-semibold"> The Avengers </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 23m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
   <!--Thor-->
-  <h1 class="hl">Here are some of movies that you might like</h1>
-  <div class="owl-carousel owl-theme">
-  <div class="cards" class="item" style="width: 18rem;">
-    <img src="Imazhe/thor.jpg" class="card-img-top" alt="..." width="200px" height="200px">
-    <div class="card-body">
-      <h5 class="card-title">Thor(2011)</h5>
-      <p class="card-text">Thor Odinson wields the power of the ancient Asgardians to fight evil throughout the Nine Realms and beyond.It is an enchanted, automated Asgardian weapon...<br>
-      </p>
-      <a href="https://www.imdb.com/title/tt0800369/" target="_blank" class="btn btn-danger">Go to the page</a>
+      <!-- Item 2 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://www.themoviedb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt1270797/" class="hover:text-red-500 text-black font-semibold"> Thor: Ragnarok </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 10m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Comedy </a>
+        </div>      
+  
+      </div>
+  <!--Venom-->
+      <!-- Item 3 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://m.media-amazon.com/images/M/MV5BNTFkZjdjN2QtOGE5MS00ZTgzLTgxZjAtYzkyZWQ5MjEzYmZjXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="#" class="hover:text-red-500 text-black font-semibold"> Venom </a>
+  
+        <!-- Viewers -->
+        <a href="https://www.imdb.com/title/tt1270797/" class="hover:text-red-500 text-sm text-black -mt-1"> 1h 52m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--Morbius-->
+      <!-- Item 4 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/morbius_onesheet_1400x2100_he.jpg?itok=-jQVkWIe" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="#" class="hover:text-red-500 text-black font-semibold"> Morbius  </a>
+  
+        <!-- Viewers -->
+        <a href="https://www.imdb.com/title/tt5108870/" class="hover:text-red-500 text-sm text-black -mt-1"> 1h 44m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+            <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Horror </a>
+        </div>      
+  
+      </div>
+  <!--Black Panther: Wakanda Forever-->
+      <!-- Item 5 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/pp_disney_blackpanther_wakandaforever_1289_d3419b8f.jpeg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt9114286/" class="hover:text-red-500 text-black font-semibold">Black Panther: Wakanda </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 41m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Drama </a>
+        </div>      
+  
+      </div>
+  <!--Punisher: War Zone-->
+      <!-- Item 6 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://static.wikia.nocookie.net/listofdeaths/images/a/a5/Punisher_War_Zone_poster.jpg/revision/latest?cb=20210406153935" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt0450314/" class="hover:text-red-500 text-black font-semibold">Punisher: War Zone</a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 1h 43m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Crime </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Drama </a>
+        </div>      
+  
+      </div>
+  
+    
     </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/thor2.jpg" class="card-img-top" alt="..." width="200px" height="200px">
-    <div class="card-body">
-      <h5 class="card-title">Thor: the dark world</h5>
-      <p class="card-text">In ancient times, the gods of Asgard fought and won a war against an evil race known as the Dark Elves. The survivors were neutralized, and their ultimate ...</p>
-      <a href="https://www.imdb.com/title/tt1981115/" class="btn btn-danger">Go to the page</a>
+</div>
+
+
+
+<!-- Logan-->
+
+<div class=" bg-gray-200 flex items-center justify-center">
+
+    <div class="grid grid-cols-6 gap-2 px-16">
+      <!-- Item 1 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://m.media-amazon.com/images/M/MV5BYzc5MTU4N2EtYTkyMi00NjdhLTg3NWEtMTY4OTEyMzJhZTAzXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_FMjpg_UX1000_.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt3315342/" class="hover:text-red-500 text-black font-semibold"> Logan  </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 17m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+            <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+            <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Drama </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--Dark Phoenix-->
+      <!-- Item 2 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/20cs_xmen_dark_phoenix_poster-keyart_2de4ace2.jpeg?region=0%2C0%2C1400%2C2100" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt6565702/" class="hover:text-red-500 text-black font-semibold"> Dark Phoenix </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 1h 53m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--The New Mutants-->
+      <!-- Item 3 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/p_thenewmutants_19999_9ae6e819.jpeg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt4682266/" class="hover:text-red-500 text-black font-semibold"> The New Mutants </a>
+  
+        <!-- Viewers -->
+        <a href="https://www.imdb.com/title/tt1270797/" class="hover:text-red-500 text-sm text-black -mt-1"> 1h 34m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Horror </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Mystery </a>
+        </div>      
+  
+      </div>
+  <!--Black Widow-->
+      <!-- Item 4 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://cdn.marvel.com/content/1x/042_bluebayou_digital_keyart_teaser_r16_lg.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt3480822/" class="hover:text-red-500 text-black font-semibold"> Black Widow</a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 14m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+            <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--Spider-Man: Homecoming-->
+      <!-- Item 5 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://www.sonypictures.co.uk/sites/unitedkingdom/files/2020-12/spider_man_homecoming_rating_0.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt2250912/" class="hover:text-red-500 text-black font-semibold">Spider-Man: Homecoming </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 13m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--Guardians of the Galaxy-->
+      <!-- Item 6 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://www.themoviedb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt2015381/" class="hover:text-red-500 text-black font-semibold">Guardians of the Galaxy </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 1m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Comedy </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+        </div>      
+  
+      </div>
+  
+    </div></div>
+
+
+
+
+
+  <!-- Iron Man 3-->
+
+  <div class="h-screen bg-gray-200 flex items-center justify-center">
+
+    <div class="grid grid-cols-6 gap-2 px-16">
+      <!-- Item 1 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX1000_.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt0371746/" class="hover:text-red-500 text-black font-semibold"> Iron Man 3 </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 6m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--Captain America: Civil War-->
+      <!-- Item 2 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/p_captianamericacivilwar_19888_074030bd.jpeg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt3498820/" class="hover:text-red-500 text-black font-semibold">Captain America: Civil War </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 27m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+          
+        </div>      
+  
+      </div>
+  <!--Ant-Man-->
+      <!-- Item 3 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://www.themoviedb.org/t/p/w500/qxMs5TU6zOTQ7cbmBZ6xGvHUDa2.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt0478970/" class="hover:text-red-500 text-black font-semibold">Ant-Man </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 1h 57m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Comedy </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Sci-Fi </a>
+        </div>      
+  
+      </div>
+  <!--Werewolf by Night-->
+      <!-- Item 4 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://m.media-amazon.com/images/M/MV5BZjI3NjI3NDQtY2RmYS00NTJjLWI0YTQtNTE4NmZiN2UzMWJjXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt15318872/" class="hover:text-red-500 text-black font-semibold"> Werewolf by Night</a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 52m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+            <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Drama </a>
+        </div>      
+  
+      </div>
+  <!--Shang-Chi -->
+      <!-- Item 5 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://m.media-amazon.com/images/M/MV5BNTliYjlkNDQtMjFlNS00NjgzLWFmMWEtYmM2Mzc2Zjg3ZjEyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt9376612/" class="hover:text-red-500 text-black font-semibold">Shang-Chi </a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 12m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Fantasy </a>
+        </div>      
+  
+      </div>
+  <!--Doktor Strange-->
+      <!-- Item 6 -->
+      <div class="flex flex-col gap-1">
+  
+        <!-- Image -->
+        <a href="" class="bg-red-500">
+          <img src="https://i.ytimg.com/vi/zKD2xuse61g/movieposter_en.jpg" class="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100" />
+        </a>
+  
+        <!-- Games Title -->
+        <a href="https://www.imdb.com/title/tt9419884/" class="hover:text-red-500 text-black font-semibold"> Doktor Strange</a>
+  
+        <!-- Viewers -->
+        <a href="#" class="hover:text-red-500 text-sm text-black -mt-1"> 2h 6m </a>
+  
+        <!-- Category Tags -->
+        <div class="flex flex-row flex-wrap gap-2">
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Fantasy </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Action </a>
+          <a href="#" class="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> Adventure </a>
+        </div>      
+  
+      </div>
+  
     </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/thor3.jpg" class="card-img-top" alt="..." width="200px" height="200px">
-    <div class="card-body">
-      <h5 class="card-title">Thor: Ragnarok</h5>
-      <p class="card-text">Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful...</p>
-      <a href="https://www.imdb.com/title/tt3501632/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
- 
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/thor4.jpg" class="card-img-top" alt="..." width="200px" height="200px">
-    <div class="card-body">
-      <h5 class="card-title">Thor: Love and Thunder</h5>
-      <p class="card-text">Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct. When Gorr finds his god living...</p>
-      <a href="https://www.imdb.com/title/tt10648342/" class="btn btn-danger">Go to the page</a>
-    </div>
+    
   </div>
 
-<!--Venom-->
 
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/venom.jpg" class="card-img-top" alt="..." width="200px" height="200px">
-  <div class="card-body">
-    <h5 class="card-title">Venom</h5>
-    <p class="card-text">While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and ...</p>
-    <a href="https://www.imdb.com/title/tt1270797/" target="_blank" class="btn btn-danger">Go to the page</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--Footer-->
+ <body class="bg-black">
+    <div class="flex justify-center items-center ">
+      <div class="mt-6 lg:mb-0 mb-6 ">
+     <footer class="w-full   pb-12 ">
+      <div
+          class="relative w-full flex items-center invisible md:visible md:pb-12"
+          x-data="getCarouselData() "
+      >
+      <div class="flex justify-center items-center space-x-10">
+  
+      <a href="https://www.facebook.com/Marvel/" role="button">
+          <!-- Facebook -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7 space-x-10"
+            fill="currentColor"
+            style="color: #1877f2"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+          </svg>
+        </a>
+        
+          <a href="https://www.instagram.com/marvel/" role="button">
+              <!-- Instagram -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                fill="currentColor"
+                style="color: #c13584"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            
+            <a href="https://twitter.com/Marvel" role="button">
+                  <!-- Twitter -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-7 w-7"
+                    fill="currentColor"
+                    style="color: #1da1f2"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+                <!-- Pinterest -->
+                <a href="https://www.pinterest.com/marvelofficial/" role="button">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="h-7 w-7"
+  fill="currentColor"
+  style="color: #e60023"
+  viewBox="0 0 24 24">
+  <path
+    d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+    fill-rule="evenodd"
+    clip-rule="evenodd" />
+  </svg>
   </div>
-</div>
-
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/venom2.jpg" class="card-img-top" alt="..." width="200px" height="200px">
-  <div class="card-body">
-    <h5 class="card-title">Venom: Let There Be Carnage</h5>
-    <p class="card-text">Eddie Brock attempts to reignite his career by interviewing serial killer Cletus Kasady, who becomes the host of the symbiote Carnage...</p>
-    <a href="https://www.imdb.com/title/tt7097896/" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-
-</div>
-
-
-<!--Iron man-->
-<div class="owl-carousel owl-theme">
-
-<div class="cards"  class="item" style="width: 18rem;">
-  <img src="Imazhe/ironman.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Iron Man</h5>
-    <p class="card-text">Iron Man is a 2008 American superhero film based on the Marvel Comics character of the same name. Produced by Marvel Studios and distributed by Paramount ...</p>
-    <a href="https://www.imdb.com/title/tt0371746/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/ironman2.jpg" class="card-img-top" alt="..." width="200px" height="300px" >
-  <div class="card-body">
-    <h5 class="card-title">Iron Man 2</h5>
-    <p class="card-text">With the world now aware that he is Iron Man, billionaire inventor Tony Stark (Robert Downey Jr.) faces pressure from all sides to share his technology with ...</p>
-    <a href="https://www.imdb.com/title/tt1228705/" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/ironman3.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Iron Man 3</h5>
-    <p class="card-text">Plagued with worry and insomnia since saving New York from destruction, Tony Stark (Robert Downey Jr.), now, is more dependent on the suits that...</p>
-    <a href="https://www.imdb.com/title/tt1300854/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<!--Spiderman-->
-
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">Spider-Man 2</h5>
-      <p class="card-text">Spider-Man 2 ... Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.Peter Parker is ...</p>
-      <a href="https://www.imdb.com/title/tt0316654/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman3.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">Spider-Man 3</h5>
-      <p class="card-text">A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains, temptations, and revenge....</p>
-      <a href="https://www.imdb.com/title/tt0413300/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman4.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">The Amazing Spider-Man</h5>
-      <p class="card-text">After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to save the city from the machinations ...</p>
-      <a href="https://www.imdb.com/title/tt0948470/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman5.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">The Amazing Spider-Man 2</h5>
-      <p class="card-text">When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones. He fell victim to Sony & Disney's rights dispute...</p>
-      <a href="https://www.imdb.com/title/tt1872181/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman6.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">Spider-Man: Homecoming</h5>
-      <p class="card-text">Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man, and finds himself on the trail of a new ...</p>
-      <a href="https://www.imdb.com/title/tt2250912/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman7.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">Spider-Man: Far from Home</h5>
-      <p class="card-text">Peter Parker's European vacation is halted when he agrees to help Nick Fury uncover the mystery of elemental creature attacks...</p>
-      <a href="https://www.imdb.com/title/tt6320628/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-  <div class="cards" style="width: 18rem;">
-    <img src="Imazhe/spiderman8.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-    <div class="card-body">
-      <h5 class="card-title">Spider-Man: No Way Home</h5>
-      <p class="card-text">With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing ...</p>
-      <a href="https://www.imdb.com/title/tt10872600/" target="_blank" class="btn btn-danger">Go to the page</a>
-    </div>
-  </div>
-</div>
-<!--Doctor Strange-->
-<div class="owl-carousel owl-theme">
-
-<div class="cards" class="item" style="width: 18rem;">
-  <img src="Imazhe/doctor1.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Doctor Strange</h5>
-    <p class="card-text">A neurosurgeon with a destroyed career sets out to repair his hands only to find himself ... While on a journey of physical and spiritual healing, a brilliant. Club reports that the film is banned in Saudi Arabia...</p>
-    <a href="https://www.imdb.com/title/tt1211837/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/doctor2.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Doctor Strange in the Multiverse of Madness</h5>
-    <p class="card-text">Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across multiverses, to battle multiple threats, ...</p>
-    <a href="https://www.imdb.com/title/tt9419884/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/av1.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">The Avengers</h5>
-    <p class="card-text">Nick Fury of S.H.I.E.L.D. brings together a team of super humans to form The Avengers to ... Earth's mightiest heroes must come together and learn to fight. From Tony Stark's...</p>
-    <a href="https://www.imdb.com/title/tt0848228/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/av2.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Avengers: Age of Ultron</h5>
-    <p class="card-text">When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest. "Avengers...</p>
-    <a href="https://www.imdb.com/title/tt2395427/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/av3.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Avengers: Infinity War</h5>
-    <p class="card-text">The Avengers and their allies must be willing to sacrifice all in an attempt to defeat. Well, it has been a fun 10 years, but Avengers: Infinity War marks the end of the Marvel Cinematic Universe...</p>
-    <a href="https://www.imdb.com/title/tt4154756/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/av4.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Avengers: Endgame</h5>
-    <p class="card-text">After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more. Marvel head Kevin Feige noted that...</p>
-    <a href="https://www.imdb.com/title/tt4154796/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-</div>
-<!--Black Panther-->
-<div class="owl-carousel owl-theme">
-<div class="cards" class="item" style="width: 18rem;">
-  <img src="Imazhe/bb1.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Black Panther</h5>
-    <p class="card-text">T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger. “Black Panther” follows T'Challa...</p>
-    <a href="https://www.imdb.com/title/tt1825683/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/bb2.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Black Panther: Wakanda Forever</h5>
-    <p class="card-text">The people of Wakanda fight to protect their home from intervening world powers as they mourn the death of King T'Challa.The people of Wakanda fight to ...</p>
-    <a href="https://www.imdb.com/title/tt9114286/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<!--Captain America-->
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/ca.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Captain America: The First Avenger</h5>
-    <p class="card-text">Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes ...</p>
-    <a href="https://www.imdb.com/title/tt0458339/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" class="item" style="width: 18rem;">
-  <img src="Imazhe/ca2.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Captain America: The Winter Soldier</h5>
-    <p class="card-text">Captain America: The Winter Soldier: Directed by Anthony Russo, Joe Russo. With Chris Evans, Samuel L. Jackson, Scarlett Johansson, Robert Redford...</p>
-    <a href="https://www.imdb.com/title/tt1843866/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-<div class="cards" style="width: 18rem;">
-  <img src="Imazhe/ca3.jpg" class="card-img-top" alt="..." width="200px" height="300px">
-  <div class="card-body">
-    <h5 class="card-title">Captain America: Civil War</h5>
-    <p class="card-text">Watch the latest trailer from Captain America: Civil War! Political involvement in the Avengers' affairs causes a rift between Captain America and Iron Man. A small detail in Disney+'s She-Hulk...</p>
-    <a href="https://www.imdb.com/title/tt3498820/" target="_blank" class="btn btn-danger">Go to the page</a>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--Footer-->
-<footer class="footer">
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/Marvel/" target="_blank">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/marvel" target="_blank">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://marvelentertainment.tumblr.com/" target="_blank">
-          <ion-icon name="logo-tumblr"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/marvel/" target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/corporate/interns" target="_blank">Intership</a></li>
-      <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" target="_blank">Marvel Unlimited</a></li>
-    </ul>
-    <p>©2023 MARVEL</p>
-  </footer>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="js/jquery.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/style.js"></script>
-  <!--Fund footer-->
-</body>
-</html>
+  </div> 
+     </div> 
+     </div>
+      <div class="w-full mx-auto text-white flex flex-col items-center">
+          <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+              <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="uppercase px-3">Marvel Unlimited</a>
+              <a href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/" class="uppercase px-3">Privacy Policy</a>
+              <a href="https://disneytermsofuse.com/english-united-kingdom/" class="uppercase px-3">Terms & Conditions</a>
+              <a href="https://www.marvel.com/corporate/license_tou" class="uppercase px-3">License Agreement</a>
+          </div>
+          <div class="uppercase pb-6"> ©2023 MARVEL</div>
+      </div>
+  </footer></body>
+  
+   <!--Fund footer-->
+   <script>
+      function getCarouselData() {
+          return {
+              currentIndex: 0,
+              images: [
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=1',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+              ],
+              increment() {
+                  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+              },
+              decrement() {
+                  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+              },
+          }
+      }
+  </script>
+  </body>
+  </html>

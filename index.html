@@ -1,208 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
- <link rel="stylesheet" href="CSS/stilimi.css">
- <script src="style.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <meta name="description" content="Free open source Tailwind CSS Store template">
+    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
+    
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+	
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+
+    <style>
+        .work-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+                
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+        
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+        
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3 {
+            display: block;
+        }
+        
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+            /*Set to match the Tailwind colour you want the active one to be */
+        }
+    </style>
+
 </head>
-<body>
-   <!--Ndertimi i navbar-->
-
-   <div id="brand"><img src="Imazhe/icon2.jpg" width="250px" height="250px"></div>
-   <nav>
-     <ul>
-      <li><a href="index.html" target="_blank">Home</a></li> 
-      <li><a href="about.html" target="_blank">About</a></li>
-      <li><a href="news.html" target="_blank">News</a></li>
-      <li><a href="movies.html" target="_blank">Movies</a></li>
-      <li><a href="characters.html" target="_blank">Characters</a></li>
-      <li><a href="contact.html" target="_blank">Contact</a></li>
-     </ul>
-   </nav>
-   <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-  </div>
-  <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-    <ul class="mobile-menu">
-      <li><a href="index.html" target="_blank">Home</a></li> 
-      <li><a href="about.html" target="_blank">About</a></li>
-      <li><a href="news.html" target="_blank">News</a></li>
-      <li><a href="movies.html" target="_blank">Movies</a></li>
-      <li><a href="characters.html" target="_blank">Characters</a></li>
-      <li><a href="contact.html" target="_blank">Contact</a></li>
-    </ul>
-  </div>
-<!--Fund navbar-->
-<!--Body-->
-<h1 class="hl">What is next?</h1>
 
 
-<img class="ss" src="Imazhe/spider-man-venom.gif" width="600px" height="250px">
+     <!--Ndertimi i navbar-->
 
- <p class="op"> Spider Man is coming with surprises this summer...<br>
- 2 June 2023</p>
-
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="Imazhe/quantumania-antman-and-the-wasp.gif">
-<img  src="Imazhe/quantumania-antman-and-the-wasp.gif" width="365px" height="200px">
-    </a>
-    <div class="desc">Ant-Man and the Wasp: Quantumania<br>
-  17  February 2023</div></div></div>
-
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_blank" href="Imazhe/gotg-vol3-guardians-of-the-galaxy-vol3.gif">
-<img   src="Imazhe/gotg-vol3-guardians-of-the-galaxy-vol3.gif" width="365px" height="200px">
-      </a>
-      <div class="desc">Get ready for Guardians of the Galaxy 3?<br>
- 5 May 2023</div></div></div>
-
- <div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="Imazhe/blade-throw.gif">
+     <nav class="bg-black shadow-lg">
+      <div class="max-w-6xl mx-auto px-4"></div>
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <!-- Website Logo -->
+            <div>
+              <a href="#" class="flex items-center py-4 px-2">
+                <img src="Imazhe/icon2.jpg" alt="Logo" class="h-20 w-40 mr-2" />
+               
+              </a>
+            </div>
+            <!-- Primary Navbar items -->
+            <div class="hidden md:flex items-center space-x-10">
+              <a href="index.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Home</a>
+                
+              <a href="about.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
   
-<img  src="Imazhe/blade-throw.gif" width="365px" height="200px">
-    </a>
-    <div class="desc">If you are a horror fans this is for u: Blade...<br>
-  6 September 2024</div></div></div>
+              <a href="news.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">News</a>
+  
+              <a href="movies.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-redn-500 transition duration-300">Movies</a>
+              <a href="characters.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Characters</a>
+                <a href="contact.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300" >Contact Us</a>
+            </div>
+            </div>
+        </div>
+      </div>
+         
+  
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+            <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+              x-show="!showMenu"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div class="hidden mobile-menu">
+        <ul class="">
+          <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+          <li class="active"><a href="about.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">About</a></li>
+          <li class="active"><a href="news.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">News</a></li>
+          <li class="active"><a href="movies.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Movies</a></li>
+          <li class="active"><a href="characters.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Characters</a></li>
+          <li class="active"><a href="contact.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Contact Us</a></li>
+        </ul>
+      
+      </div>
+      <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
 
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_blank" href="Imazhe/ded.gif">
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      </script>
+    </nav>
+  
+<!--Fund navbar-->
 
-<img  src="Imazhe/ded.gif" width="365px" height="200px">
-      </a>
+<!--Body-->
+<body class="bg-gray-200">
+<div class="carousel relative container mx-auto" style="max-width:1600px;">
+  <div class="carousel-inner relative overflow-hidden w-full">
+      <!--Slide 1-->
+      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+          <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://gifdb.com/images/high/spiderman-video-game-pfco8ogqqqgo47sv.gif');">
 
-      <div class="desc">Deadpool 3 like you never can imagine<br>
- 8 November 2024</div></div></div>
- 
+              <div class="container mx-auto">
+                  <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                      <p class="text-black text-4xl my-4">What Is Next?</p>
+                      <a class="text-xl  text-black  " >Spider Man Is Coming With Surprises This Summer...
+                        
+                        </a>
+                  </div>
+              </div>
 
- <h3 class="ht">If you are interested in more</h3>
- <hr>
- <!--<h5>Here is your full list of all upcoming marvel movies - with key details!</h5>-->
- <table>
-  <tr>
-    <th>Marvel Movie</th>
-    <th>Short Description</th>
-    <th>Premiere Date</th>
-  </tr>
-  <tr>
-    <td>SECRET INVASION (SERIES)</td>
-    <td>Nick Fury (Samuel L. Jackson), Maria Hill (Cobie Smulders) and Talos (Ben Mendelsohn) will deal with a sect of ill-intentioned Skrulls hiding on Earth and infiltrating “every level of life” on the planet</td>
-    <td>Spring 2023</td>
-  </tr>
-  <tr>
-    <td>THE MARVELS</td>
-    <td>In January 2020, Marvel reportedly hired WandaVision staff writer Megan McDonnell to begin drafting a sequel to Captain Marvel.</td>
-    <td>July 28, 2023</td>
-  </tr>
-  <tr>
-    <td>ECHO (SERIES)</td>
-    <td> In March of 2021, word broke indicating Echo, who debuted in Disney+’s Hawkeye would get her own show.</td>
-    <td>Summer 2023</td>
-  </tr>
-  <tr>
-    <td>LOKI SEASON 2 (SERIES)</td>
-    <td>During the Disney Upfront presentation in May of 2022, Feige revealed the cast of Loki would soon reassemble to shoot the program’s second season.</td>
-    <td>Summer 2023</td>
-  </tr>
-  <tr>
-    <td>IRONHEART (SERIES)</td>
-    <td>Based on the character introduced into Marvel comics by Brian Michael Bendis and artist Mike Deodato (with a subsequent redesign by Eve Ewing and Kevin Libranda), Riri Williams (Dominque Thorne) is a robotics genius who builds a suit of armor more advanced than anything Tony Stark devised in his lifetime.</td>
-    <td> Fall 2023</td>
-  </tr>
-  <tr>
-    <td>AGATHA: COVEN OF CHAOS (SERIES)</td>
-    <td>The series will see Kathryn Hahn return as lovable witch Agatha Harkness. Presumably, she will have to find her way out of being nosy neighbor Agnes and then restore her powers for another fight with Wanda (Elizabeth Olsen).</td>
-    <td>Winter 2023</td>
-  </tr>
-</table>
-<p class="sh"><a class="pj" href="https://editorial.rottentomatoes.com/article/full-list-of-all-upcoming-marvel-movies/">You can find a lot of upcoming movies...Is only a click!</a></p>
+          </div>
+      </div>
+      <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+      <!--Slide 2-->
+      <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+          <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://i.pinimg.com/originals/75/8b/ac/758bac8b2d9960ce2bafada33944b1b1.gif');">
+
+              <div class="container mx-auto">
+                  <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                      <p class="text-black text-4xl my-4">Venom Is Here</p>
+                      <a class="text-xl text-black">Are u ready for surprises...</a>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+      <!--Slide 3-->
+      <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+          <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://media.tenor.com/YQxQ39lD8UwAAAAC/spectacular-spider-man-symbiote.gif');">
+
+              <div class="container mx-auto">
+                  <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                      <p class="text-black text-4xl my-4">Spider Man With Venom Soon</p>
+                      <a class="text-xl text-black">2024</a>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+      <!-- Add additional indicators for each slide-->
+      <ol class="carousel-indicators">
+          <li class="inline-block mr-3">
+              <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+          <li class="inline-block mr-3">
+              <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+          <li class="inline-block mr-3">
+              <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+      </ol>
+
+  </div>
+</div>
+
+<section class="bg-gray-200 py-8">
+
+  <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+
+      <nav id="store" class="w-full z-30 top-0 px-6 py-1">
+          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
+
+              <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+  New Upcoming Movies
+</a>
+
+              <div class="flex items-center" id="store-nav-content">
+
+                  <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                      <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z" />
+                      </svg>
+                  </a>
+
+                  <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                      <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
+                      </svg>
+                  </a>
+
+              </div>
+        </div>
+      </nav>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://i.pinimg.com/736x/81/1b/c0/811bc0b09b6459cde4a46e4a3be0ef1e.jpg">
+              <div class="pt-3 flex items-center justify-between">
+                  <p class="">The Marvels</p>
+                  <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                  </svg>
+              </div>
+              <p class="pt-1 text-gray-900">2023</p>
+          </a>
+      </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://caracol.com.co/resizer/hMIrY2rz5yx5jDPeFd5Fp5pD-WE=/1600x1600/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/DYJ3A2GYEJJQZF3YXACTGAQX3Y.jpg">
+              <div class="pt-3 flex items-center justify-between">
+                  <p class="">Deadpool 3</p>
+                  <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                  </svg>
+              </div>
+              <p class="pt-1 text-gray-900">2024</p>
+          </a>
+      </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://static.wikia.nocookie.net/marvelcinematicuniverse/images/8/8e/New_Blade_Logo.jpg/revision/latest?cb=20220805190832">
+              <div class="pt-3 flex items-center justify-between">
+                  <p class="">Blade</p>
+                  <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                  </svg>
+              </div>
+              <p class="pt-1 text-gray-900">2024</p>
+          </a>
+      </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://cdn.marvel.com/u/prod/marvel/i/mg/7/a0/5a97179ec79e5/standard_incredible.jpg">
+              <div class="pt-3 flex items-center justify-between">
+                  <p class="">Fantastic Four</p>
+                  <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                  </svg>
+              </div>
+              <p class="pt-1 text-gray-900">2025</p>
+          </a>
+      </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+        <a href="#">
+            <img class="hover:grow hover:shadow-lg" src="https://m.media-amazon.com/images/M/MV5BNjliZGNlM2UtOTFhMy00NTYzLWFiMmYtMmIwM2JhMTQzZjg4XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg">
+            <div class="pt-3 flex items-center justify-between">
+                <p class="">Avengers: The Kang Dynasty</p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+            </div>
+            <p class="pt-1 text-gray-900">2025</p>
+        </a>
+    </div>
+
+    <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+        <a href="#">
+            <img class="hover:grow hover:shadow-lg" src="https://paradoks.net.pl/image_files/text/44559/321368649_1314123952487439_2346057480352308707_n.jpg">
+            <div class="pt-3 flex items-center justify-between">
+                <p class="">Avengers: Secret Wars
+                </p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+            </div>
+            <p class="pt-1 text-gray-900">2026-2027</p>
+        </a>
+    </div>
+
+    <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+        <a href="#">
+            <img class="hover:grow hover:shadow-lg" src="https://images.thedirect.com/media/photos/SDCC_CaptainAmericaNewWorldOrder_3000x3000.jpg">
+            <div class="pt-3 flex items-center justify-between">
+                <p class="">Captain America: Brave New World
+                </p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+            </div>
+            <p class="pt-1 text-gray-900">2024</p>
+        </a>
+    </div>
+
+    <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+        <a href="#">
+            <img class="hover:grow hover:shadow-lg" src="https://cdn.vox-cdn.com/thumbor/AoVF395vwf0eH-rVnuCxgW0D9gc=/1400x1400/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/24011049/image_2022_09_10_154802886.png">
+            <div class="pt-3 flex items-center justify-between">
+                <p class="">Thunderbolts</p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+            </div>
+            <p class="pt-1 text-gray-900">2024</p>
+        </a>
+    </div>
+
+    </div>
+
+</section>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
 
 <!--Footer-->
-<footer class="footer">
+<footer class="bg-black">
+
+    <div class="flex justify-center items-center ">
+      <div class="mt-6 lg:mb-0 mb-6 ">
+     <footer class="w-full   pb-12 ">
+      <div
+          class="relative w-full flex items-center invisible md:visible md:pb-12"
+          x-data="getCarouselData() "
+      >
+      <div class="flex justify-center items-center space-x-10">
   
-  <ul class="social-icon">
-    <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/Marvel/" target="_blank">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </a></li>
-    <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/marvel" target="_blank">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </a></li>
-    <li class="social-icon__item"><a class="social-icon__link" href="https://marvelentertainment.tumblr.com/" target="_blank">
-        <ion-icon name="logo-tumblr"></ion-icon>
-      </a></li>
-    <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/marvel/" target="_blank">
-        <ion-icon name="logo-instagram"></ion-icon>
-      </a></li>
-  </ul>
-  <ul class="menu">
-    <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/corporate/interns" target="_blank">Intership</a></li>
-    <li class="menu__item"><a class="menu__link" href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" target="_blank">Marvel Unlimited</a></li>
-
-
-  </ul>
-  <p>©2023 MARVEL</p>
-</footer>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<!--Fund footer-->
-</body>
-</html>
+      <a href="https://www.facebook.com/Marvel/" role="button">
+          <!-- Facebook -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7 space-x-10"
+            fill="currentColor"
+            style="color: #1877f2"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+          </svg>
+        </a>
+        
+          <a href="https://www.instagram.com/marvel/" role="button">
+              <!-- Instagram -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                fill="currentColor"
+                style="color: #c13584"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            
+            <a href="https://twitter.com/Marvel" role="button">
+                  <!-- Twitter -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-7 w-7"
+                    fill="currentColor"
+                    style="color: #1da1f2"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+                <!-- Pinterest -->
+                <a href="https://www.pinterest.com/marvelofficial/" role="button">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="h-7 w-7"
+  fill="currentColor"
+  style="color: #e60023"
+  viewBox="0 0 24 24">
+  <path
+    d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+    fill-rule="evenodd"
+    clip-rule="evenodd" />
+  </svg>
+  </div>
+  </div> 
+     </div> 
+     </div>
+      <div class="w-full mx-auto text-white flex flex-col items-center">
+          <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+              <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="uppercase px-3">Marvel Unlimited</a>
+              <a href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/" class="uppercase px-3">Privacy Policy</a>
+              <a href="https://disneytermsofuse.com/english-united-kingdom/" class="uppercase px-3">Terms & Conditions</a>
+              <a href="https://www.marvel.com/corporate/license_tou" class="uppercase px-3">License Agreement</a>
+          </div>
+          <div class="uppercase pb-6"> ©2023 MARVEL</div>
+      </div>
+  </footer>
+  
+   <!--Fund footer-->
+   <script>
+      function getCarouselData() {
+          return {
+              currentIndex: 0,
+              images: [
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=1',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+                  'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+              ],
+              increment() {
+                  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+              },
+              decrement() {
+                  this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+              },
+          }
+      }
+  </script>
+  </body>
+  </html>
